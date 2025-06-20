@@ -1,0 +1,30 @@
+LangChain is a powerful framework for building applications with large language models (LLMs). It allows developers to chain together multiple components like prompt templates, memory, agents, and document retrievers to create complex and intelligent workflows. LangChain is particularly useful in Retrieval-Augmented Generation (RAG), where retrieved knowledge is combined with LLMs to produce more grounded responses. With LangChain, developers can use different models, retrievers, and storage systems modularly.
+
+The Retrieval-Augmented Generation (RAG) architecture improves the factual accuracy of language model outputs by incorporating external data sources during generation. Rather than relying solely on pre-trained knowledge, the model queries a database of documents to retrieve relevant information that is then appended to the prompt. This technique significantly improves the reliability of responses and is commonly used in enterprise chatbots, search engines, and internal knowledge bases.
+
+Vector databases are a core part of RAG pipelines. They store embeddings — vector representations of textual content — allowing for semantic search based on similarity. Popular vector stores include FAISS (developed by Facebook), Chroma, Pinecone, Weaviate, and Milvus. These databases allow fast retrieval of the most relevant chunks of data. For example, when a user asks a question, the system uses an embedding model to turn the query into a vector and searches for the most similar document vectors in the database.
+
+Chroma is an easy-to-use, developer-friendly vector database optimized for local use. It supports persist-to-disk functionality, multiple embedding models, and an in-memory option. It integrates easily with LangChain and is a good choice for rapid prototyping or small-scale projects. Chroma supports filtering, similarity search, and metadata tagging, making it suitable for more complex use cases.
+
+Embedding models transform text into high-dimensional vectors that represent semantic meaning. These vectors allow comparison of sentences, paragraphs, or documents by measuring distances like cosine similarity. Hugging Face offers models like `all-MiniLM-L6-v2`, which are widely used in semantic search. Embeddings are crucial to helping the model understand that "How do I set up LangChain?" is similar to "LangChain installation steps".
+
+FastAPI is a high-performance web framework for building APIs with Python. It's based on standard Python type hints and built on top of Starlette and Pydantic. FastAPI is widely appreciated for its speed, automatic OpenAPI docs, and developer ergonomics. It’s perfect for wrapping machine learning models into APIs, integrating database logic, or building full-featured web backends. FastAPI’s automatic docs are especially useful for teams and rapid prototyping.
+
+React is a JavaScript library for building dynamic, component-based user interfaces. Created by Facebook, React encourages developers to break UI into reusable components. It uses a virtual DOM to optimize rendering performance and offers hooks like `useState`, `useEffect`, and `useContext` for managing state and logic. React can integrate easily with RESTful APIs, making it a great frontend choice for FastAPI-based projects.
+
+A feedback loop in machine learning enables models to improve over time based on user input. In the context of a chatbot, users can give thumbs-up or thumbs-down on responses, optionally add comments, and this feedback can be stored, analyzed, and used to refine retrieval, ranking, or even model behavior. The feedback loop is essential for deploying AI systems in real-world environments where continuous learning is expected.
+
+Session tracking is a method of associating multiple interactions with the same anonymous or logged-in user. In modern apps, session IDs are often stored in local storage or cookies. These IDs allow the backend to group and analyze usage patterns or feedback per session, enabling better personalization, debugging, and learning.
+
+Uvicorn is a lightning-fast ASGI server used to deploy FastAPI applications. It supports WebSocket handling, concurrency with asyncio, and hot-reloading during development. Uvicorn can serve applications either directly or behind a reverse proxy like Nginx. In production, it is often used with Gunicorn to scale across CPU cores.
+
+SQLite is a lightweight, file-based relational database system. It requires no server installation and is ideal for prototyping, small-scale projects, and embedded systems. SQLite supports standard SQL syntax and can be integrated with ORMs like SQLAlchemy or SQLModel in Python. It is fast, reliable, and easy to use, especially in desktop or single-user web applications.
+
+JSON (JavaScript Object Notation) is a widely used data interchange format. It is lightweight, human-readable, and supported by virtually all programming languages. JSON is the default format for APIs, configuration files, and structured logs. In Python, the `json` module makes it easy to encode/decode JSON.
+
+LangChain also supports document chunking, which improves retrieval granularity by splitting long documents into smaller pieces. Chunk size and overlap can be configured to balance between retrieval precision and context continuity. Chunking is essential in RAG because LLMs have context window limits (e.g., 4096 tokens in GPT-3.5).
+
+Fine-tuning refers to training a pre-trained language model further on a specific dataset to specialize it for a task. This technique improves accuracy on domain-specific queries and can adapt models to company-specific jargon, product details, or proprietary processes. OpenAI, Hugging Face, and others offer APIs or scripts for fine-tuning.
+
+Monitoring feedback statistics such as response quality, downvote ratio, and most flagged queries is crucial for continuously improving an AI system. Dashboards and admin tools can visualize feedback trends and highlight problematic sources or user pain points.
+

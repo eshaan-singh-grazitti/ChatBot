@@ -1,0 +1,146 @@
+.app-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+  font-family: Arial, sans-serif;
+}
+
+/* Header */
+.app-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Chat Window */
+.chat-container {
+  flex: 1;
+  overflow-y: auto;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 15px;
+  max-height: 80vh;
+}
+
+/* Individual Chat Messages */
+.chat-message {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.chat-message.user {
+  justify-content: flex-end;
+}
+
+.chat-message.ai {
+  justify-content: flex-start;
+}
+
+.chat-message .bubble {
+  max-width: 70%;
+  padding: 12px 16px;
+  border-radius: 20px;
+  font-size: 1rem;
+  line-height: 1.4;
+  position: relative;
+  word-wrap: break-word;
+}
+
+/* Colors for bubbles */
+.chat-message.user .bubble {
+  background-color: #d0f0ff;
+  color: #000;
+  border-top-right-radius: 0;
+}
+
+.chat-message.ai .bubble {
+  background-color: #eaeaea;
+  color: #000;
+  border-top-left-radius: 0;
+}
+
+/* Sources under AI message */
+.sources {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.sources ul {
+  padding-left: 16px;
+  margin-top: 5px;
+}
+
+/* Input Form */
+.input-box {
+  display: flex;
+  gap: 10px;
+  padding-top: 10px;
+}
+
+.input-box input {
+  flex: 1;
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.input-box button {
+  padding: 12px 20px;
+  font-size: 1rem;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.input-box button:disabled {
+  background-color: #7aaed9;
+  cursor: not-allowed;
+}
+
+.feedback-ui {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.feedback-ui button {
+  padding: 6px 12px;
+  font-size: 1rem;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.feedback-ui input {
+  padding: 6px;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+.admin-btn {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  margin-top: 20px;
+  padding: 10px 16px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  max-width: 200px;
+}
+
+.admin-btn:hover {
+  background-color: #555;
+}

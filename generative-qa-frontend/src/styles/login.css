@@ -1,0 +1,86 @@
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+
+ .form-container {
+     background: linear-gradient(#4d4c4c, #2e2c2c) padding-box,
+         linear-gradient(120deg, transparent 25%, #005b8b, #40ff99) border-box;
+     padding: 32px 24px;
+     font-size: 14px;
+     color: white;
+     display: flex;
+     flex-direction: column;
+     gap: 20px;
+     box-sizing: border-box;
+     height: 100vh;
+ }
+
+ .form {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     gap: 30px;
+     margin: 5rem auto;
+     padding: 50px;
+     border: 2px solid white;
+     border-radius: 20px;
+ }
+
+ .heading {
+     font-size: 50px;
+     font-weight: 600;
+     margin:0px 5rem 4rem 5rem;
+ }
+
+ .form-input {
+     color: white;
+     background: transparent;
+     border: 1px solid #ffffff;
+     border-radius: 5px;
+     padding: 8px;
+     outline: none;
+ }
+
+ button {
+     border-radius: 5px;
+     padding: 6px;
+     background: #ffffff14;
+     color: #c7c5c5;
+     border: 1px solid #414141;
+ }
+
+ button:hover {
+     background: #212121;
+     cursor: pointer;
+ }
+
+ .form-group {
+     display: flex;
+     flex-direction: column;
+     gap: 5px;
+     color: #ffffff;
+     position: relative;
+     width: 100%;
+ }
+
+ .form-group label {
+     position: absolute;
+     top: 0;
+     left: 0;
+     padding: 5px;
+     pointer-events: none;
+     transition: 0.5s;
+ }
+
+ .form-group input:focus~label,
+ .form-group input:valid~label {
+     top: -16px;
+     left: 0;
+     background: transparent;
+     padding: 10px 0 0 0;
+     color: #ffffff;
+
+     font-size: 14px;
+ }
