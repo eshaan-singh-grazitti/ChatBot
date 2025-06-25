@@ -113,11 +113,13 @@ const AdminPanel = () => {
                                         {fb.approved}
                                     </td>
                                     <td className="btn-cell">
-                                        <button className="status-btn approve" onClick={() => updateStatus(fb.id, 'approved')}>✅</button>
-                                        <button className="status-btn reject" onClick={() => updateStatus(fb.id, 'rejected')}>❌</button>
+                                        {fb.approved === "pending" && (
+                                            <>
+                                                <button className="status-btn approve" onClick={() => updateStatus(fb.id, 'approved')}>✅</button>
+                                                <button className="status-btn reject" onClick={() => updateStatus(fb.id, 'rejected')}>❌</button>
+                                            </>
+                                        )}
                                     </td>
-
-
                                 </tr>
                             ))}
                         </tbody>

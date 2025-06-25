@@ -24,3 +24,20 @@
   color: #007bff;
   background: none;
 }
+
+.nav-panel {
+  padding: 10px 16px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  max-width: 200px;
+}
+
+.nav-panel:hover {
+  background-color: #555;
+  color: white;
+}
