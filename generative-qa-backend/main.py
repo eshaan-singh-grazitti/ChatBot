@@ -21,7 +21,6 @@ import uvicorn
 
 Base.metadata.create_all(bind=engine)
 
-
 app = FastAPI()
 
 app.add_middleware(
@@ -64,7 +63,7 @@ class FeedbackRequest(BaseModel):
     session_id: str
     question: Optional[str] = ""
     answer: str
-    rating: str  # 'up' or 'down'
+    rating: str  
     comment: Optional[str] = ""
     sources: Optional[List[str]] = []
 
@@ -74,7 +73,7 @@ class FeedbackResponse(BaseModel):
     session_id: str
     question: Optional[str] = ""
     answer: str
-    rating: str  # 'up' or 'down'
+    rating: str 
     comment: Optional[str] = ""
     sources: Optional[List[str]] = []
     timestamp: datetime
@@ -226,7 +225,6 @@ def get_feedback_stats(db: Session = Depends(get_db)):
         for row in trend_rows
     ]
 
-    # Problematic chunks
     neg_feedback = (
         db.query(Feedback.sources)
         .filter(Feedback.rating == "down")

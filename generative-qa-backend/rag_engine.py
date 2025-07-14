@@ -58,7 +58,7 @@ def is_vague_question(q: str) -> bool:
 def generate_answer(question, session_id=None):
     docs = load_documents()
     db = create_vector_store(docs)
-    retriever = db.as_retriever(search_kwargs={"k": 8})
+    retriever = db.as_retriever(search_kwargs={"k": 5})
 
     session = SessionLocal()
     source_scores = get_source_feedback_scores(session)
@@ -79,7 +79,11 @@ def generate_answer(question, session_id=None):
 
     full_prompt = f"{chat_context}\nUser: {question}"
 
-    llm = ChatOpenAI(openai_api_key=openai_api_key, temperature=0)
+    llm = ChatOpenAI(
+    openai_api_key=openai_api_key,
+    model="gpt-4o-mini",
+    temperature=0
+    )
     prompt = PromptTemplate.from_template(
         "You are a helpful assistant. Use the following context to answer the user's question.\n\n"
         "Context:\n{context}\n\nQuestion:\n{question}\n\nAnswer:"
@@ -95,12 +99,5 @@ def generate_answer(question, session_id=None):
     sources = list(set(Path(doc.metadata.get("source", "unknown")).name for doc in top_docs))
     return answer, sources
 
-
-    # sources = [doc.metadata.get("source","N/A") for doc in top_docs]
-
-    # qa_chain = RetrievalQA.from_chain_type(llm=llm,retriever=retriever,return_source_documents=True)
-    # result = qa_chain({"query":question})
-    # answer = result["result"]
-    # sources = [doc.metadata.get("source","N/A")for doc in result["source_documents"]]
 
 

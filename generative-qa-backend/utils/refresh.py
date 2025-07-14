@@ -52,16 +52,13 @@ def refresh_embeddings(file_list):
         loader = TextLoader(file_path, encoding="utf-8")
         docs = loader.load()
 
-        # ✅ Assign metadata['source'] as just filename (important for deletion)
         for doc in docs:
             doc.metadata["source"] = Path(file_path).name
 
         docs = splitter.split_documents(docs)
 
-        # ✅ DELETE old vectors for this source
         db.delete(where={"source": Path(file_path).name})
 
-        # ✅ Add new vectors
         db.add_documents(docs)
         db.persist()
 
